@@ -1,0 +1,11 @@
+#!/bin/csh
+set userid=`echo $EMAILADDR | cut -d@ -f1`
+set addr=`echo $EMAILADDR | cut -d@ -f2`
+
+echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'
+echo ""
+echo     $addr에 아이디 \"$userid\" 로 접속합니다.... 
+echo ""
+echo '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'
+echo ""
+exec /usr/bin/rlogin -8 -l $userid $addr

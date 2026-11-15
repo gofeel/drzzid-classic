@@ -1,0 +1,20 @@
+#!/bin/sh
+ 
+total=$1
+outf=$2
+ 
+echo > $outf
+echo 당신은 이곳에 >> $outf
+echo  >> $outf
+#echo >> $outf
+echo "         >> $total << 번째 들어오신분입니다." >> $outf
+echo >> $outf
+echo >> $outf
+echo ".. 환영인사 말한마디!! ........................................................" >> $outf
+if [ -r etc/motd ]; then
+        cat etc/motd >> $outf
+else
+        echo >> $outf
+        bin/fortune -s >> $outf
+fi
+                
